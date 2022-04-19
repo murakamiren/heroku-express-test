@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const book_1 = __importDefault(require("./routes/book"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
@@ -29,4 +30,5 @@ app.get("/users", (req, res) => {
     // res.send(JSON.stringify(users));
     res.json(users);
 });
+app.use("/book", book_1.default);
 //# sourceMappingURL=index.js.map

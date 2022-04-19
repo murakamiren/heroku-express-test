@@ -1,4 +1,5 @@
 import express from "express";
+import book from "./routes/book";
 
 const app: express.Express = express();
 
@@ -39,3 +40,5 @@ app.get("/users", (req: express.Request, res: express.Response) => {
 	// res.send(JSON.stringify(users));
 	res.json(users);
 });
+
+app.use("/book", book);
