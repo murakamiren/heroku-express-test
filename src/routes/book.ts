@@ -17,4 +17,10 @@ route.get("/:id", async (req: Request, res: Response) => {
 	res.json(data);
 });
 
+route.get("/authorid/:id", async (req: Request, res: Response) => {
+	const data = await prisma.book.findMany({
+		where: { authorId: parseInt(req.params.id) },
+	});
+});
+
 export default route;
