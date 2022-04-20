@@ -10,7 +10,7 @@ route.get("/", async (req: Request, res: Response) => {
 	res.json(data);
 });
 
-route.get("/withPost", async (req: Request, res: Response) => {
+route.get("/withbook", async (req: Request, res: Response) => {
 	const data = await prisma.user.findMany({
 		include: { Book: true },
 	});
