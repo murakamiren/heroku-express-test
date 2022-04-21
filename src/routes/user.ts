@@ -21,7 +21,7 @@ route.get("/:id", async (req: Request, res: Response) => {
 	const data = await prisma.user.findUnique({
 		where: { id: parseInt(req.params.id) },
 	});
-	res.json([data]);
+	data ? res.json([data]) : undefined;
 });
 
 export default route;
